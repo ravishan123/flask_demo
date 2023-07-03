@@ -1,39 +1,45 @@
-Flask Heroku Sample
-====================
+Simple Flask Todo App using SQLAlchemy and SQLite database.
 
-A simple Python Flask example application that's ready to run on Heroku.
+For styling [semantic-ui](https://semantic-ui.com/) is used.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+### Setup
+Create project with virtual environment
 
-## Development Setup
-
-* `pipenv install`
-
-* `pipenv shell`
-
-* `python app.py`
-
-## Screenshot
-
-![screenshot](https://i.imgur.com/wf74fxY.png)
-
-## Deploy
-
-* `heroku create`
-
-* `heroku addons:create heroku-postgresql:hobby-dev`
-
-* `git push heroku master`
-
-* Note: make sure you run `db.create_all()` to create the tables: 
-```bash
-$ heroku run python
-Python 3.6.8 (default, Jan 29 2019, 19:35:16)
->>> from app import db
->>> db.create_all()
->>> exit()
+```console
+$ mkdir myproject
+$ cd myproject
+$ python3 -m venv venv
 ```
 
-## Contributors
+Activate it
+```console
+$ . venv/bin/activate
+```
 
-* [Yefim](https://twitter.com/yefim)
+or on Windows
+```console
+venv\Scripts\activate
+```
+
+Install Flask
+```console
+$ pip install Flask
+$ pip install Flask-SQLAlchemy
+```
+
+Set environment variables in terminal
+```console
+$ export FLASK_APP=app.py
+$ export FLASK_ENV=development
+```
+
+or on Windows
+```console
+$ set FLASK_APP=app.py
+$ set FLASK_ENV=development
+```
+
+Run the app
+```console
+$ flask run
+```
